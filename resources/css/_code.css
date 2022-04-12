@@ -30,11 +30,7 @@ pre {
 	word-break: normal;
 	word-wrap: normal;
     box-shadow: 0 1px 1px rgb(0 0 0 / 8%);
-    @apply flex relative rounded-lg;
-}
-
-pre code {
-    @apply flex flex-1;
+    @apply relative rounded-lg;
 }
 
 pre .copyBtn {
@@ -45,10 +41,6 @@ pre .copyBtn:hover,
 pre .copyBtn:focus,
 pre .copyBtn:active {
     @apply text-white outline-none;
-}
-
-pre .copyBtn svg {
-    @apply mx-auto;
 }
 
 pre code.torchlight {
