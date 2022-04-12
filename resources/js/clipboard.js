@@ -9,6 +9,8 @@ let codeBlocks = document.querySelectorAll('#main-content pre');
 
 codeBlocks.forEach((element, key) => {
     // Copy to clipboard button.
+    let parent = element.parentNode;
+    let copyToClipboardDiv = document.createElement('div');
     let copyToClipboardBtn = document.createElement('button');
 
     copyToClipboardBtn.innerHTML = clipboardIcon;
@@ -22,7 +24,11 @@ codeBlocks.forEach((element, key) => {
     copyToClipboardBtn.setAttribute('title', 'Copy to Clipboard');
     copyToClipboardBtn.classList.add('copyBtn');
 
-    element.appendChild(copyToClipboardBtn);
+    copyToClipboardDiv.classList.add('relative');
+
+    parent.replaceChild(copyToClipboardDiv, element);
+    copyToClipboardDiv.appendChild(element);
+    copyToClipboardDiv.appendChild(copyToClipboardBtn);
 
     let copyToClipboard = new ClipboardJS(`#${copyToClipboardBtn.id}`);
 
